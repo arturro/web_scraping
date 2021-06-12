@@ -4,7 +4,7 @@
 
 
 # Zadanie 2
-# Pobierz listę dat z sekcji "On this day" na wikipedii
+# Pobierz listę dat z sekcji "On this day" na wikipedii
 
 
 # Zadanie 3

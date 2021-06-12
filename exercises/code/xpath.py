@@ -6,6 +6,7 @@ from lxml import html
 # Wczytanie zawartości strony z pliku
 
 page_path = os.path.join(os.path.dirname(__file__), "example.html")
+page_path = "example.html"
 with open(page_path) as page_file:
     page_content = page_file.read()
 
@@ -29,6 +30,9 @@ dir(result)
 # lista więc może spróbujmy tak
 for item in result:
     print(item)
+
+# tez warto zapamietac
+from pprint import pprint, pformat
 
 print(type(result[0]))
 print(result[2].text)
@@ -58,7 +62,7 @@ print(result)
 
 print(result[0].attrib)
 print(result[0].text)
-
+# readAudit[@id='root']
 # Otrzymywanie wyników z zapytania xpath
 
 # Text
@@ -88,3 +92,6 @@ tree = html.fromstring(page.content)
 
 result = tree.xpath("//*[@id=\"toc\"]/ul/li/a/span[@class=\"toctext\"]/text()")
 print(result)
+
+result = tree.xpath('//*[@id="data"')
+result = tree.xpath("//div[@id=\"data\"")

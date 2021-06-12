@@ -64,3 +64,9 @@ print(urls)
 
 # jeszcze takie chodzenie
 body.find(id="test").p.string
+
+links = body.find_all("a")
+print(links)
+
+[{'href': el.attrs['href'], 'name': el.text} for el in links]
+
