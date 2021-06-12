@@ -134,6 +134,10 @@ LOGGING = {
             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
             'style': '{',
         },
+        'basic': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
         'simple': {
             'format': '{levelname} {message}',
             'style': '{',
@@ -149,8 +153,7 @@ LOGGING = {
             'level': 'DEBUG',
             # 'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
-            # 'formatter': 'simple'
-            'formatter': 'verbose'
+            'formatter': 'basic'
         },
         'mail_admins': {
             'level': 'ERROR',
