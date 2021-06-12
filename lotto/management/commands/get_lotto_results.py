@@ -105,7 +105,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         # https://www.lotto.pl/lotto/wyniki-i-wygrane/date,2021-06-09,10
         self.default_url = 'https://www.lotto.pl/lotto/wyniki-i-wygrane'
-        self.test_file = os.path.join('lotto', 'lotto.html')
+        self.test_file = os.path.join('lotto', 'sample', 'lotto.html')
 
         self.url = options['url']
         self.file = options.get('file', self.test_file)
