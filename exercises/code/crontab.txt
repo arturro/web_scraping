@@ -1,0 +1,6 @@
+# doczytaj na: https://pl.wikipedia.org/wiki/Crontab
+# https://crontab.guru/examples.html
+
+* * * * * date >> /tmp/date.log
+
+
