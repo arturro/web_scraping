@@ -25,8 +25,8 @@ try:
     1 / 0
 except ZeroDivisionError:
     logger.error('nie dziel przez 0')
-    logger.error('nie dziel przez 0', exc_info=True)  # zadziała analogicznie jak logger.exception
-    logger.exception('nie dziel przez 0')
+    # logger.error('nie dziel przez 0', exc_info=True)  # zadziała analogicznie jak logger.exception
+    # logger.exception('nie dziel przez 0')
     # porównaj error i exception
 except Exception:
     pass  # tego nie rób bo można nie wychwycić krytycznych rzeczy

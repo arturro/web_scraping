@@ -4,8 +4,8 @@ import logging
 
 logging.basicConfig(
     # datefmt='%d-%b-%y %H:%M:%S',
-    level=logging.INFO,  # jaki poziom chcesz?
-    # filename='exercise.log',  # leci do pliku
+    level=logging.DEBUG,  # jaki poziom chcesz?
+    filename='exercise.log',  # leci do pliku
     # plus pozmieniaj format
 
     # pozmieniajcie format na różne sposoby

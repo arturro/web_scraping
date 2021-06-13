@@ -1,17 +1,19 @@
 #!/usr/bin/env python
 
 import logging
+from logging.handlers import RotatingFileHandler
 
 # Create a custom log
 logger = logging.getLogger(__name__)
 
 # Create handlers
 c_handler = logging.StreamHandler()
-f_handler = logging.FileHandler('file.log')
+# f_handler = logging.FileHandler('file.log')
 # sprawdź jeszcze rotację
-# f_handler = logging.handlers.RotatingFileHandler('file.log', maxBytes=1024, backupCount=5)
+f_handler = RotatingFileHandler('file.log', maxBytes=32, backupCount=5)
+# logging.handlers.RotatingFileHandler
 
-c_handler.setLevel(logging.WARNING)
+c_handler.setLevel(logging.DEBUG)
 f_handler.setLevel(logging.ERROR)
 
 # Create formatters and add it to handlers
