@@ -3,3 +3,6 @@ Django==3.2.4
 ipython==7.24.1
 lxml==4.6.3
 requests==2.25.1
+
+# odkomentuj jeśli zainstalujesz jeszcze sentry
+# sentry_sdk==1.1.0
