@@ -1,3 +1,42 @@
 from django.db import models
 
-# Create your models here.
+
+class LottoCategory(models.Model):
+    name = models.CharField(max_length=100)
+
+    class Meta:
+        verbose_name = 'Lotto category'
+        verbose_name_plural = 'Lotto categories'
+
+    def __str__(self):
+        return self.name
+
+
+class LottoResultItem(models.Model):
+    category = models.ForeignKey(
+        LottoCategory,
+        # related_name="results",
+        on_delete=models.CASCADE
+    )
+    date = models.DateTimeField()
+
+    class Meta:
+        verbose_name = 'Lotto result'
+        verbose_name_plural = 'Lotto results'
+
+    def __str__(self):
+        return f'{self.category} - {self.date}'
+
+
+class LottoResultNumber(models.Model):
+    number = models.PositiveSmallIntegerField()
+    result = models.ForeignKey(
+        LottoResultItem,
+        on_delete=models.CASCADE
+    )
+
+    class Meta:
+        unique_together = ('number', 'result')
+
+        verbose_name = 'Lotto result number'
+        verbose_name_plural = 'Lotto result numbers'

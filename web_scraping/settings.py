@@ -170,7 +170,7 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': False,
         },
-        '': {
+        'lotto': {
             'handlers': ['console', 'mail_admins'],
             'level': 'DEBUG',
         }
