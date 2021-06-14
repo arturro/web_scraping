@@ -15,23 +15,25 @@ class LottoCategory(models.Model):
 class LottoResultItem(models.Model):
     category = models.ForeignKey(
         LottoCategory,
-        # related_name="results",
+        related_name='items',
         on_delete=models.CASCADE
     )
     date = models.DateTimeField()
+    number = models.PositiveIntegerField()
 
     class Meta:
         verbose_name = 'Lotto result'
         verbose_name_plural = 'Lotto results'
 
     def __str__(self):
-        return f'{self.category} - {self.date}'
+        return f'{self.category} {self.date} {self.number}'
 
 
 class LottoResultNumber(models.Model):
     number = models.PositiveSmallIntegerField()
     result = models.ForeignKey(
         LottoResultItem,
+        related_name='numbers',
         on_delete=models.CASCADE
     )
 
@@ -40,3 +42,6 @@ class LottoResultNumber(models.Model):
 
         verbose_name = 'Lotto result number'
         verbose_name_plural = 'Lotto result numbers'
+
+    def __str__(self):
+        return f'{self.number}'

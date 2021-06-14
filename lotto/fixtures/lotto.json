@@ -1,0 +1,23 @@
+[
+{
+  "model": "lotto.lottocategory",
+  "pk": 1,
+  "fields": {
+    "name": "Lotto"
+  }
+},
+{
+  "model": "lotto.lottocategory",
+  "pk": 2,
+  "fields": {
+    "name": "Lotto Plus"
+  }
+},
+{
+  "model": "lotto.lottocategory",
+  "pk": 3,
+  "fields": {
+    "name": "Super Szansa"
+  }
+}
+]
