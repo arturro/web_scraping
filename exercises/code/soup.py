@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 # Wczytanie zawartości strony z pliku
 
 page_path = os.path.join(os.path.dirname(__file__), "example.html")
+# page_path = os.path.join(os.getcwd(), ""example.html")
+# page_path = os.path.join("exercises", "code", "example.html")
 with open(page_path) as page_file:
     page = page_file.read()
 
@@ -12,7 +14,7 @@ with open(page_path) as page_file:
 
 soup = BeautifulSoup(page, 'html.parser')
 print(soup)
-
+# dir(soup)
 print(soup.title)
 
 # Wyszukiwanie elementów (równiez po atrybutach)
@@ -40,13 +42,10 @@ result = soup.find_all(lambda tag: tag.name == "p" in tag.text)
 print(result)
 
 # Przejście do rodzica
-header_node = soup.find("h1")
-print(header_node)
+row_1 = soup.find(id="row_1")
+print(row_1)
 
-result = header_node.find_all("p")
-print(result)
-
-headers_parent = header_node.parent
+headers_parent = row_1.parent
 print(headers_parent.name)
 result = headers_parent.find_all("p")
 print(result)

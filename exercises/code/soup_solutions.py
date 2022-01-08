@@ -38,7 +38,25 @@ print(years)
 # (ale przy pomocy BeautifulSoup)
 # to działa
 
-response = requests.get("https://www.lotto.pl/lotto/wyniki-i-wygrane")
+headers = {
+    'authority': 'www.lotto.pl',
+    'pragma': 'no-cache',
+    'cache-control': 'no-cache',
+    'sec-ch-ua': '" Not;A Brand";v="99", "Google Chrome";v="97", "Chromium";v="97"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Linux"',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36',
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'sec-fetch-site': 'same-origin',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-user': '?1',
+    'sec-fetch-dest': 'document',
+    'accept-language': 'pl,en-US;q=0.9,en;q=0.8,en-GB;q=0.7,ru;q=0.6',
+    'cookie': 'ai_user=zSWWsqs2ElMZUeV+bNxT8Z|2021-06-12T07:50:31.860Z; ai_session=87L7vwHm17boAqgeoKdQKt|1641570860274|1641570860274',
+}
+
+response = requests.get("https://www.lotto.pl/lotto/wyniki-i-wygrane", headers=headers)
 soup = BeautifulSoup(response.content, 'html.parser')
 
 newest_lotto_result = soup.find("div", class_="recent-result-item Lotto")

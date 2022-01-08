@@ -59,6 +59,7 @@ class Command(BaseCommand):
         """
         Parsuje string typu: 'Czw., 10.06.2021, godz. 21:50' do datetime
         """
+        date_str = date_str.strip()
         tmp = date_str.split(',')
         date_tmp = tmp[1].strip()
         hour_tmp = tmp[2][-5:]
@@ -73,7 +74,7 @@ class Command(BaseCommand):
         """
         result = {}
         # log.debug(etree.tostring(result_item))
-        result['number'] = result_item.xpath('.//p[@class="result-item__number"]/text()')[0]
+        result['number'] = result_item.xpath('.//p[@class="result-item__number"]/text()')[0].strip()
         log.debug(pformat(result))
         result['items'] = [item.strip() for item in
                            result_item.xpath('.//div[@class="scoreline-item circle"]/text()')]
@@ -85,8 +86,8 @@ class Command(BaseCommand):
 
         game_main_boxes = tree.xpath('//div[@class="game-main-box skip-contrast"]')
         for game_main_box in game_main_boxes:
-            # log.debug(game_main_box)
-            # log.debug(etree.tostring(game_main_box))
+            log.debug(game_main_box)
+            log.debug(etree.tostring(game_main_box))
             date_text = game_main_box.xpath('.//p[@class="sg__desc-title"]/text()')
             if date_text:
                 date_time_obj = self._parse_date(date_text[0])

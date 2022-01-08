@@ -42,5 +42,5 @@ if __name__ == '__main__':
     a1.info('An info message with %s', 'some parameters')
     for x in range(10):
         lvl = choice(levels)
-        lvlname = logging.getLevelName(lvl)
-        a2.log(lvl, 'A message at %s level with %d %s', lvlname, 2, 'parameters')
+        lvl_name = logging.getLevelName(lvl)
+        a2.log(lvl, 'A message at %s level with %d %s', lvl_name, 2, 'parameters')

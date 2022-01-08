@@ -30,5 +30,3 @@ except ZeroDivisionError:
     # porównaj error i exception
 except Exception:
     pass  # tego nie rób bo można nie wychwycić krytycznych rzeczy
-
-

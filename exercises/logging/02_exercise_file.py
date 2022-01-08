@@ -46,4 +46,3 @@ data_str = pformat(my_dict)
 print(data_str)
 pprint(my_dict)
 logging.error(f'my_dict2: {pformat(my_dict)}')
-

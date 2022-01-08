@@ -5,8 +5,9 @@ from lxml import html
 
 # Wczytanie zawartości strony z pliku
 
-page_path = os.path.join(os.path.dirname(__file__), "example.html")
-page_path = "example.html"
+#page_path = os.path.join(os.path.dirname(__file__), "example.html")
+page_path = os.path.join("exercises", "code", "example.html")
+#page_path = "example.html"
 with open(page_path) as page_file:
     page_content = page_file.read()
 
@@ -93,5 +94,5 @@ tree = html.fromstring(page.content)
 result = tree.xpath("//*[@id=\"toc\"]/ul/li/a/span[@class=\"toctext\"]/text()")
 print(result)
 
-result = tree.xpath('//*[@id="data"')
-result = tree.xpath("//div[@id=\"data\"")
+result = tree.xpath('//*[@id="toctogglecheckbox"]')
+result = tree.xpath('//li[@id="n-mainpage-description"]')
