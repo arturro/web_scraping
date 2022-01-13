@@ -4,6 +4,7 @@
 
 import logging
 from random import choice
+import uuid
 
 
 class ContextFilter(logging.Filter):
@@ -25,13 +26,14 @@ class ContextFilter(logging.Filter):
         """
         record.ip = choice(ContextFilter.IPS)
         record.user = choice(ContextFilter.USERS)
+        record.ruid = str(uuid.uuid4())
         return True
 
 
 if __name__ == '__main__':
     levels = (logging.DEBUG, logging.INFO, logging.WARNING, logging.ERROR, logging.CRITICAL)
     logging.basicConfig(level=logging.DEBUG,
-                        format='%(asctime)-15s %(name)-5s %(levelname)-8s IP: %(ip)-15s User: %(user)-8s %(message)s')
+                        format='%(asctime)-15s %(name)-5s %(levelname)-8s IP: %(ip)-15s ruid: %(ruid)-20s User: %(user)-8s %(message)s')
     a1 = logging.getLogger('a.b.c')
     a2 = logging.getLogger('d.e.f')
 

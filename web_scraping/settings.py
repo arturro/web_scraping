@@ -176,6 +176,7 @@ LOGGING = {
         }
     }
 }
+ADMINS = ['admin@test.com', ]
 
 # odkomentuj jesli zainstalujesz jeszcze senty
 # import sentry_sdk

@@ -123,15 +123,13 @@ class Command(BaseCommand):
                 content = self._get_html_from_file(self.file)
             else:
                 content = self._get_html_from_file(self.test_file)
-
             self._parse_content(content)
-
         except ParserError:
             log.exception(f'bład pobierania danych ze strony: {self.data_src}')
             raise CommandError('get_lotto_results failed')
-
         except Exception as exc:  # reszta błedów...
             log.exception('bład pobierania danych z lotto')
             raise CommandError('get_lotto_results failed')
+
         log.info(f'Poprawnie wczytano dane ze strony {self.data_src}')
         self.stdout.write(self.style.SUCCESS('Successfully get lotto results'))

@@ -39,6 +39,7 @@ my_dict = {
 }
 
 logging.error(f'my_dict: {my_dict}')
+logging.error('my_dict: %s', my_dict)
 
 from pprint import pformat, pprint  # pretty print
 

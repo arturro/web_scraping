@@ -70,6 +70,9 @@ print(result[0].text)
 result = tree.xpath("//li/text()")
 print(result)
 
+result = tree.xpath("//a/text()")
+print(result)
+
 # Wartość atrybutu
 result = tree.xpath("//a/@href")
 print(result)
